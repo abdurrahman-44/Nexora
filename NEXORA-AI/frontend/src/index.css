@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-main: #080d18;
+  --bg-secondary: #101827;
+  --surface-primary: #141f31;
+  --surface-glass: rgba(255, 255, 255, 0.055);
+  --surface-glass-hover: rgba(255, 255, 255, 0.085);
+  --border-glass: rgba(255, 255, 255, 0.10);
+  --border-glass-hover: rgba(100, 139, 255, 0.42);
+  --text-main: #f5f7fc;
+  --text-muted: #94a3b8;
+  --accent-primary: #648bff;
+  --accent-secondary: #8b7cff;
+}
+
+html.light {
+  --bg-main: #f4f7fc;
+  --bg-secondary: #ffffff;
+  --surface-primary: #ffffff;
+  --surface-glass: rgba(255, 255, 255, 0.82);
+  --surface-glass-hover: rgba(255, 255, 255, 0.95);
+  --border-glass: rgba(15, 23, 42, 0.10);
+  --border-glass-hover: rgba(69, 111, 234, 0.45);
+  --text-main: #172033;
+  --text-muted: #667085;
+  --accent-primary: #456fea;
+  --accent-secondary: #6e59f7;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.glass-panel {
+  background: var(--surface-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-glass);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.16);
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.glass-panel:hover {
+  border-color: var(--border-glass-hover);
+}
+
+.glass-sidebar {
+  background: rgba(15, 23, 42, 0.82);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+html.light .glass-sidebar {
+  background: rgba(255, 255, 255, 0.88);
+  border-right: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.glass-table-container {
+  background: rgba(20, 31, 49, 0.86);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-glass);
+}
+
+html.light .glass-table-container {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(15, 23, 42, 0.09);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
